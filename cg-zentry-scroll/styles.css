@@ -1,0 +1,271 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 1600vh !important; /* Increased height to accommodate new section + more images */
+  font-family: "Roboto Mono", monospace;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  font-family: "FK Screamer";
+  font-size: 15vw;
+  font-weight: 600;
+  line-height: 90%;
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+p {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 400;
+  color: #fff;
+}
+
+section {
+  width: 100vw;
+  height: 100vh;
+}
+
+.new-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.new-content {
+  text-align: center;
+  z-index: 2;
+}
+
+.new-content h1 {
+  font-size: 8vw;
+  margin-bottom: 1rem;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.new-content p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  color: rgba(255,255,255,0.9);
+}
+
+.hero {
+  padding: 4em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: url(./assets/hero.jpeg) no-repeat 50% 50%;
+  background-size: cover;
+}
+
+.hero p {
+  width: 50%;
+  text-align: center;
+}
+
+.about {
+  padding: 4em 12em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10em;
+  background-color: #667e74;
+}
+
+.about-img,
+.about-copy {
+  flex: 1;
+}
+
+.about-img {
+  height: 75%;
+  border: 2px solid #000;
+}
+
+.about-copy h1 {
+  text-align: center;
+  font-size: 10vw;
+  color: #263a30;
+}
+
+.footer {
+  padding: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #1d2944;
+}
+
+.sticky {
+  position: relative;
+  perspective: 1000px;
+}
+
+.intro {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  padding: 1em;
+  display: flex;
+  z-index: 2;
+}
+
+.intro-col {
+  flex: 1;
+  display: flex;
+}
+
+.intro-col p {
+  flex: 1;
+}
+
+.intro-col p span {
+  display: inline-block;
+}
+
+.intro-col:nth-child(2) p {
+  text-align: right;
+}
+
+.gallery {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.gallery > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.gallery .img-2 {
+  clip-path: polygon(40% 25%, 60% 25%, 60% 75%, 40% 75%);
+}
+
+.gallery .img-3 {
+  clip-path: polygon(50% 25%, 50% 25%, 50% 75%, 50% 75%);
+}
+
+.gallery .img-3 img {
+  transform-origin: center;
+  transform: scale(2);
+  object-fit: contain;
+}
+
+/* Styles for additional images */
+.gallery > div:not(.img-1):not(.img-2):not(.img-3) img {
+  object-fit: contain;
+  object-position: center;
+}
+
+.gallery > div:not(.img-1):not(.img-2):not(.img-3) {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.copy {
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotateY(-75deg) scale(0.5);
+  transform-origin: bottom left;
+  display: none;
+}
+
+.copy h1 {
+  font-size: 5vw;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  h1 {
+    font-size: 20vw;
+  }
+
+  .hero p {
+    width: 100%;
+  }
+
+  .about {
+    padding: 4em 2em;
+    flex-direction: column;
+    gap: 4em;
+  }
+
+  .about-copy {
+    flex: 0.5;
+  }
+
+  .about-img {
+    margin-top: 4em;
+    height: 100%;
+  }
+
+  .about-img img {
+    object-fit: contain;
+    max-height: 80vh;
+    width: auto;
+  }
+
+  .intro,
+  .intro-col {
+    flex-direction: column;
+  }
+
+  .intro-col p {
+    text-align: center !important;
+  }
+
+  .copy {
+    width: 90%;
+  }
+
+  .copy h1 {
+    font-size: 10vw;
+  }
+
+  /* Mobile-specific gallery adjustments */
+  .gallery > div img {
+    object-fit: contain;
+    max-height: 90vh;
+    width: auto;
+  }
+
+  .gallery .img-3 img {
+    transform: scale(1.5);
+  }
+}
