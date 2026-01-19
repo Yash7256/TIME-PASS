@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const questionContainer = document.querySelector(".question-container");
     const resultContainer = document.querySelector(".result-container");
-    const gifResult = document.querySelector(".gif-result");
+    const gifResult = document.querySelector(".result-gif");
     const heartLoader = document.querySelector(".cssload-main");
     const yesBtn = document.querySelector(".yes-btn");
     const noBtn = document.querySelector(".no-btn");
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 setTimeout(() => {
                     window.location.href = "index-gallery.html";
                 }, 1000);
-            }, 2000); // Show result for 2 seconds then fade and redirect
+            }, 3000); // Show result for 3 seconds then fade and redirect
         }, 3000);
     });
 });
